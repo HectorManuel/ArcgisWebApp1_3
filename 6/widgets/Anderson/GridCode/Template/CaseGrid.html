@@ -1,0 +1,17 @@
+<div>
+    <div id="error" dojo-attach-point="Error">
+        <p class="bg-danger" data-dojo-attach-point="ErrorMessage"></p>
+        <p class="bg-info" data-dojo-attach-point="InfoMessage"></p>
+    </div>
+    <div id="Filter" class="row">
+        <div class="col-sm-12">
+            <label id="labelCaseFilter" for="filter">Filter:</label>
+            <input id="caseFilter" type="text" data-provide="typeahead" data-items="10">
+        </div>
+    </div>
+    <div id="CaseGrid" data-dojo-attach-point="NodeCaseGrid">
+    </div>
+    <div id="CaseManagement">
+        <button type="button" class="btn btn-sm">Add Case</button>
+    </div>
+</div>
