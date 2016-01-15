@@ -92,16 +92,8 @@ define(['dojo/_base/declare',
         
       DownloadCSV: function(){
         var CSVConvertion = this.GridToCSV();
-        // var csvString = "data:text/csv;charset=UTF-8," + CSVConvertion.results[0];
-//         
-        // var encodedUri = encodeURI(csvString);
-        // var link = document.createElement("a");
-        // link.setAttribute("href", encodedUri);
-        // link.setAttribute("download", "data.csv");
-        // document.body.appendChild(link);
-        // link.click();
-        // document.body.removeChild(link);
         
+        //desn't work on safary or apple, looking for a workaround for this .
         var blob = new Blob([CSVConvertion.results[0]],{type: 'text/csv;charset=utf-8;'});
         if(navigator.msSaveBlob){//IE10+
           navigator.msSaveBlob(blob,"data2.csv");
