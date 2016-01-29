@@ -1,0 +1,10 @@
+{
+  "name": "CRIMShop",
+  "platform": "HTML",
+  "version": "1.4",
+  "wabVersion": "1.4",
+  "author": "Hector M. Asencio GMT",
+  "description": "Shop for CRIM users",
+  "copyright": "",
+  "license": "http://www.apache.org/licenses/LICENSE-2.0"
+}

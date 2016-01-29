@@ -91,7 +91,8 @@ var ie = (function() {
       window.path + 'libs/caja-html-sanitizer-minified.js',
       window.apiUrl + 'dojox/grid/enhanced/resources/claro/EnhancedGrid.css' ,
       window.apiUrl + 'dojox/grid/enhanced/resources/EnhancedGrid_rtl.css',
-      window.path + 'widgets/Anderson/gridx/resources/claro/Gridx.css'
+      window.path + 'widgets/Anderson/gridx/resources/claro/Gridx.css',
+      window.path + 'widgets/Anderson/GridCode/css/style.css'
     ]);
 
     if (window.apiUrl.substr(window.apiUrl.length - 'arcgis-js-api/'.length,

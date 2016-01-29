@@ -254,6 +254,7 @@ function(CustomList, registry,
                               if(currentValue != "Seleccione Categoría"){
                                 this.ProcessAndRecord(currentValue);
                                 domStyle.set(this.cucar, {display:'block'});
+                                domStyle.set(this.dialogoAbre,{display:'block'});
                               }
                               else{
                                 this.justCruising = true;
@@ -321,7 +322,7 @@ function(CustomList, registry,
 	    
 	    TreeView.CreateStoreComercios();
 	    this.treeComercios = TreeView.CreateTreeComercio();
-	    this.treeComercios.placeAt(this.treeViewBodyComercios);
+	    this.treeComercios.placeAt(this.treeViewBodyComercios); 
 	    this.treeComercios.on("checkBoxClick", lang.hitch(this,this.CheckBoxComercios));
 	    this.treeComercios.on("click", lang.hitch(this,this.ItemClicked));
 	    //this.treeComercios.on("delete", lang.hitch(this,this.DeletedItem));
@@ -338,7 +339,7 @@ function(CustomList, registry,
     	//dojo.connect(this.box, 'onChange', this.ProcessAndRecord()); 
     	
     	this.myDialog = new Dialog({
-    	  title:"prog Dialog",
+    	  title:"Resultado en forma tabular",
     	  style:"min-width:300px; max-width:80%;",
     	  doLayout:true,
     	  parseOnLoad:true,
@@ -383,8 +384,9 @@ function(CustomList, registry,
        var column = [
          {id:'col1', name:'ID', field:'ObjectId', width:'5em'},
          {id:'çol2', name:'Nombre', field:'Nombre', width:'30em'},
-         {id:'col3', name:'Municipio', field:'Municipio', width:'10em'},
+         {id:'col7', name:'Area', field:'area', width:'15em'},
          {id:'col4', name:'Barrio', field:'Barrio', width: '15em'},
+         {id:'col3', name:'Municipio', field:'Municipio', width:'10em'},
          {id:'col6', name:'Codigo Postal', field:'Zip', width:'6em'}
        ];
        
@@ -397,7 +399,7 @@ function(CustomList, registry,
        this.myDialog.set("content", RefGrid);
        this.myDialog.show();
        RefGrid._grid.startup();
-       var MyCSV = RefGrid.GridToCSV();
+       //var MyCSV = RefGrid.GridToCSV();
       }
    },
 
@@ -420,6 +422,7 @@ function(CustomList, registry,
    //"<button class='spanDivStyle' data-dojo-attach-event='click:DeleteCommerceType' data-dojo-attach-point='"+ value +"' id='"+ value +"'>"+ value +"</button>";
    ProcessAndRecord: function(value){
      var index = this.selectedComerceArray.indexOf(value);
+     TreeView.ClearStoreCommerce();
      if(index == -1)
      {
 
@@ -505,6 +508,7 @@ function(CustomList, registry,
      // }
      this.selectedComerceArray.splice(0, this.selectedComerceArray.length);
      domStyle.set(this.cucar, {display:'none'});
+     domStyle.set(this.dialogoAbre,{display:'none'});
      domStyle.set(this.showComerces,{display:'none'});
      this.box.set("value",obj.id);
    },
@@ -1205,7 +1209,7 @@ function(CustomList, registry,
 		          	  			var geom = featureSet.features[n].geometry;
 		          	  			var municipio = featureSet.features[n].attributes["MUNICIPIO"];
 		          	  			var barrio = featureSet.features[n].attributes["BARRIO"];
-		          	  			var area= featureSet.features[n].attributes["NOMRE_AREA"];
+		          	  			var area= featureSet.features[n].attributes["NOMBRE_AREA"];
 		          	  			var sip = featureSet.features[n].attributes["Zip"];
 		          	  			TreeView.AddToMemory(idChild, nameChild, typeChild, parentChild, geom, municipio, barrio,area, sip);
 	            	  		}
@@ -1234,6 +1238,7 @@ function(CustomList, registry,
             	  
             	  domStyle.set(this.requestInfo,{display:'none'});
             	  domStyle.set(this.Results,{display:'block'});
+            	  //domStyle.set(this.dialogoAbre2,{display:'block'});
 
           	    this.tree.expandAll();
 

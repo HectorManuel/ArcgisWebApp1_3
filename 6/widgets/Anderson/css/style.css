@@ -90,6 +90,16 @@ p {
 	border-radius: 5px 5px 0px 0px;
 }
 
+.claro .dijitDialogTitleBar{
+	background-color: #cccccc;
+	text-align: center;
+}
+
+.claro .dijitDialogTitle{
+	font-size: 1.2em;
+	font-weight:600; 
+}
+
 .dijitTabListWrapper{
 	width:100% !important;
 	left:5px !important;
@@ -141,19 +151,6 @@ p {
 	margin-bottom:10px:
 }
 
-.btnStyle1 {
-    width:auto;
-    height:20px;
-    font-size:1em;
-    background-color: orange;
-    color:black;
-    font-weight:600;
-    border:1px solid orange;
-    border-radius: 5px;
-    margin-top:15px;
-    margin-left: 10px;
-    
-}
 .btnDeleteStyle {
     width:auto;
     height:18px;
@@ -162,21 +159,31 @@ p {
     color:white;
     font-weight:600;
     border:1px solid red;
-    border-radius: 3px;
+    
     margin-left: 5px;
     margin-top:5px;
     
 }
 .btnStyle2 {
     width:auto;
-    height:18px;
+    height:24px;
     font-size:1em;
-    background-color: #838383;
-    color:white;
+    background-color: #cccccc;
     font-weight:600;
     border:1px solid #838383;
-    border-radius: 3px;
     margin-top:5px;  
+}
+
+.DialogOpenBtn {
+    width:auto;
+    height:24px;
+    font-size:1em;
+    background-color: #cccccc;
+    font-weight:600;
+    border:1px solid #838383;
+    margin-top:5px; 
+
+
 }
 
 .visibilityBtn{

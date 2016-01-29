@@ -78,7 +78,7 @@ function (declare, array, lang, kernel, domConstruct, i18n, _WidgetsInTemplateMi
           if(this.myStore._data.hasOwnProperty(key)){
             var obj = this.myStore._data[key]
             if(obj.type == "comercio"){
-              storeData.push({ObjectId: obj.id, Nombre:obj.name, Municipio: obj.municipio, Barrio:obj.barrio, Zip:"00"+obj.zip.toString()});
+              storeData.push({ObjectId: obj.id, Nombre:obj.name, Municipio: obj.municipio, Barrio:obj.barrio, Zip:"00"+obj.zip.toString(), area:obj.area});
             }
           }
         }
@@ -106,7 +106,6 @@ function (declare, array, lang, kernel, domConstruct, i18n, _WidgetsInTemplateMi
       CreateStoreComercios: function(){
         this.comercioStore = new ObjectStore({
                 data:[{ id: 'R', name:'Results', type:'result', location:null,}],clearOnClose:true});
-        //this.myObservable = Observable(this.myStore);
         this.modelStore = new ObjectStoreModel({
           store: this.comercioStore,
           query: {id:"R"},
@@ -117,7 +116,6 @@ function (declare, array, lang, kernel, domConstruct, i18n, _WidgetsInTemplateMi
       
       AddToMemoryComercio: function(id, name, type, parent, location){
         var ar = { id: id, name:name, type:type, parent: parent, location:location};
-        console.log(ar);
         var verify = this.comercioStore.get(ar.id);
         if(!verify){
           this.comercioStore.add(ar);

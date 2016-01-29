@@ -1,0 +1,36 @@
+.Title{
+	font-family:"Arial Black";
+	font-size: 2em;	
+}
+.heading2{
+	font-family:"Arial Black";
+	font-size: 1em;
+}
+
+.MainMenuTiles{
+  display:block;
+  float:left;
+  margin: 5px 5px 5px 5px;
+  height:150px;
+  width:120px;
+  text-align:center;
+  position:relative;
+}
+
+.MainMenuTiles img{
+  position: absolute;
+  bottom:0;
+  left: 0;
+}
+
+.MainMenuImage{
+  width:90px;
+  height:90px;
+  margin-left:15px;
+  margin-bottom:10px;
+}
+
+
+.MainMenuTiles:hover{
+  background-color:rgb(247, 194, 5);
+}

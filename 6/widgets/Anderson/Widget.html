@@ -81,7 +81,7 @@
       <!--RESULT SCREEN LAYOUT-->
       <div data-dojo-attach-point="Results" data-dojo-id="Results" style="display:none">
         <button class="btnStyle2" data-dojo-attach-point="retroceder"  id="retroceder">Nueva Busqueda</button>
-        <button data=dojo=attach-point="dialogoAbre" data-dojo-attach-event="click:DialogoOpenPreference"></button>
+        <button class="DialogOpenBtn" data=dojo=attach-point="dialogoAbre2" data-dojo-attach-event="click:DialogoOpenPreference">informacion Detallada</button>
         <br />
         <br />
         <table data-dojo-attach-point="TableResultsGross">
@@ -116,10 +116,10 @@
         Comercios Encontrados:
       </p>
       <div data-dojo-attach-point="gridData"></div>
-      <button data=dojo=attach-point="dialogoAbre" data-dojo-attach-event="click:DialogoOpen"></button>
       <!-- <div data-dojo-attach-point="gridData"></div> -->
-      <button class="btnStyle2" data-dojo-attach-point="showComerces" data-dojo-attach-event="click:ClearAllSelectedCheckBox" id="showComerces" style="display:none; float:left; margin-bottom:10px">Limpiar Selecci&oacute;n</button>
+      <button class="DialogOpenBtn" style="display: none;" data-dojo-attach-point="dialogoAbre" data-dojo-attach-event="click:DialogoOpen">informacion Detallada</button>
       <button class="btnDeleteStyle" data-dojo-attach-point="cucar" data-dojo-attach-event="click:ClearAllComercios" id="cucar" style="display:none;float:left; margin-bottom: 10px">Borrar Lista</button>
+      <button class="btnStyle2" data-dojo-attach-point="showComerces" data-dojo-attach-event="click:ClearAllSelectedCheckBox" id="showComerces" style="display:none; float:left; margin-bottom:10px">Limpiar Selecci&oacute;n</button>
       <div data-dojo-attach-point="treeViewBodyComercios" style="width:100%; max-height:450px;overflow-y:auto; margin-top: 10px"></div>
     </div>
   </div>
