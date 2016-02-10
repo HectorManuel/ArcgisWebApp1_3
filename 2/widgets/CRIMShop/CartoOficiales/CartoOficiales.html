@@ -1,0 +1,55 @@
+<div>
+	<div style="height:340px; width:100%" data-dojo-attach-point="CartoOficialesSpace" id="CartoOficialesSpace">
+		<div data-dojo-attach-point="CartoTitle" class="subTitleCarto">
+			Mapas Cartografícos oficiales
+		</div>
+		<table>
+			<tr>
+				<td>
+					<label class="checkboxLabelCarto">
+						<input type="checkbox" name="check1in1000" data-dojo-attach-point="check1in1000" data-dojo-attach-event:"click:Checked1in1000">escala 1:1000</input>
+					</label>
+				</td>
+				<td>
+					<label style="margin-top:10px" data-dojo-attach-point="cantidad1a1000">Cantidad:</label>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<label class="checkboxLabelCarto">
+						<input type="checkbox" name="check1in10000" data-dojo-attach-point="check1in10000" data-dojo-attach-event:"click:Checked1in10000">escala 1:10000</input>
+					</label>
+				</td>
+				<td>
+					<label style="margin-top:10px" data-dojo-attach-point="cantidad1a10000">Cantidad:</label>
+				</td>
+			</tr>
+		</table>
+		<div style="margin-top:10px" data-dojo-attach-point="GraphicArea">
+			<p>Metodos de selección</p>
+			<div data-dojo-attach-point="metodosSeleccion" style="width:100%; height:60px; border:1px solid black; text-align:center">
+				<table>
+					<tr>
+						<td>
+							<button data-dojo-attach-point="point" class="PointImg Drawbtn" data-dojo-attach-event="click:PointClick"></button>
+						</td>
+						<td>
+							<button data-dojo-attach-point="line" class="LineImg Drawbtn" data-dojo-attach-event="click:LineClick"></button>
+						</td>
+						<td>
+							<button data-dojo-attach-point="square" class="SquareImg Drawbtn" data-dojo-attach-event="click:SquareClick"></button>
+						</td>
+						<td>
+							<button data-dojo-attach-point="Remove" class="RemoveImg Drawbtn" data-dojo-attach-event="click:DeselectClick"></button>
+						</td>
+					</tr>
+				</table>
+			</div>
+			<div data-dojo-attach-point="descriptions" style="margin-top:5px; width:100%; height:90px; border:1px solid black">
+				
+			</div>
+			
+		</div>
+		<button id="addCartoToCart" class="mainButtonStyleCarto" data-dojo-attach-event="click:AddToCartClick" data-dojo-attach-point="addCartoToCart">Agregar al carro</button>
+	</div>
+</div>

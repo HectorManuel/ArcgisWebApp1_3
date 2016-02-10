@@ -1,35 +1,14 @@
 <div>
-	<div id="MainTitle" class="Title" data-tojo-attach-point="MainTitle">
-		Cartographic Products
-	</div>
-	<div id="MainMenu" style="margin-top:20px; margin-left:20px" data-dojo-attach-point="MainMenupage">
-		<div id="Row1" data-dojo-attach-point="Row1">
-			<div data-dojo-attach-point="divFoto" class="MainMenuTiles">
-				<div class="heading2">
-					Fotos Aéreas
-				</div>
-				<img src="widgets/CRIMShop/images/aerea.PNG" alt="Submit" class="MainMenuImage">
-			</div>
-			<div data-dojo-attach-point="divCarto" class="MainMenuTiles">
-				<div class="heading2">
-					Mapas Cartográficos
-				</div>
-				<img src="widgets/CRIMShop/images/catast.PNG" alt="Submit" class="MainMenuImage">
-			</div>
+	<div data-dojo-attach-point="AppHeader" style="display:block">
+		<button data-dojo-attach-point="backBtn" data-dojo-attach-event="click:ReturnMainMenu"class="backBtn">
+		</button>
+		<div id="MainTitle" class="Title" data-tojo-attach-point="MainTitle">
+			Cartographic Products
 		</div>
-		<div id="Row2" data-dojo-attach-point="Row2">
-			<div data-dojo-attach-point="divColindante" class="MainMenuTiles">
-				<div class="heading2">
-					Lista de colindantes
-				</div>
-				<img src="" alt="Submit" class="MainMenuImage">
-			</div>
-			<div class="MainMenuTiles">
-				<div data-dojo-attach-point="divElemento" class="heading2">
-					Elementos gráficos					
-				</div>
-				<img src="" alt="Submit" class="MainMenuImage">
-			</div>
-		</div>
+		<button data-dojo-attach-point="cartbutton" class="cartBtn" data-dojo-attach-event="click:OpenCart">
+			<span data-dojo-attach-point="cartCount" class="CartSpan">100</span>
+		</button>
 	</div>
+	<div data-dojo-attach-point="mainMenuDiv" style="clear:both"></div>
+	<div data-dojo-attach-point="shoopingCart" style="clear:both"></div>
 </div>

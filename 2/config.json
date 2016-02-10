@@ -243,7 +243,7 @@
         "name": "CRIMShop",
         "label": "Tienda de Planos CRIM",
         "index": 2,
-        "openAtStart": false,
+        "openAtStart": true,
         "config": "configs/CRIMShop/config_Tienda de Planos CRIM.json"
       }
     ],

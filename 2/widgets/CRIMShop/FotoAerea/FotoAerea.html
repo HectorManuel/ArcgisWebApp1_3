@@ -1,0 +1,23 @@
+<div>
+	<div style="height:170px; width:100%;" data-dojo-attach-point="FotoAreaSpace" id="FotoAereaSpace">
+		<div class="subTitle" data-dojo-attach-point="FotoTitle">
+			Foto Aerea
+		</div>
+		<div data-dojo-attach-point="MapSelect" id="MapSelect">
+		</div>
+		<!-- <input id="checkBox" data-dojo-attach-point="checkBox"/><label for="checkBox">Desea seleccionar un radio?</label> -->
+		<label class="checkboxLabel">
+			<input type="checkbox" name="checkBox" data-dojo-attach-point="checkBox" data-dojo-attach-event="click:OnCheckboxClicked">
+				 Desea seleccionar un radio?
+			</input>
+		</label>
+		<label class="checkboxLabel">
+			<input type="checkbox" name="checkBox" data-dojo-attach-point="checkBoxCOlindantes" data-dojo-attach-event="click:GetListaColindante">
+				 Desea Lista de colindante del area?
+			</input>
+		</label>
+		<button id="addFotoToCart" class="mainButtonStyle" data-dojo-attach-event="click:AddFotoToCart" data-dojo-attach-point="addFotoToCart">Agregar al carro</button>
+		<button id="previewAerea" class="mainButtonStyle" data-dojo-attach-point="previewAerea">vista Previa</button> 	
+	</div>
+	
+</div>

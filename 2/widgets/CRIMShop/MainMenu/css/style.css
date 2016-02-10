@@ -1,0 +1,54 @@
+.heading2{
+	font-family:"Arial Black";
+	font-size: 1em;
+}
+
+.shopSub{
+	font-family:"Arial Black";
+	font-size: 1.5em;	
+	display: block;
+	float:left;
+	margin-top:20px;
+	border-top:2px solid #E6E6E6;
+	width:100%;
+}
+
+.MainMenuButton{
+  width:120px;
+  height:150px;
+  display:block;
+  margin:5px 5px 5px 5px;
+  position:relative;
+  float:left;
+  background-repeat:no-repeat;
+  background-position: 50% 70%;
+  text-align:center;
+  background-color:transparent;
+  border:none;
+}
+
+.MainMenuButton:hover{
+	background-color:rgb(247,194,5);
+}
+
+.FotoAereaImage{
+	background-image: url("../../images/aerea.PNG");	
+}
+
+.CartoImage{
+	background-image: url("../../images/catast.PNG");	
+}
+
+.buttonSpanMainMenu{
+	position:absolute;
+	display:block;
+	top:0;
+	left:0;
+}
+
+.positioning{
+	margin-top:150px;
+	width:260px;
+	max-height:350px;
+	display:none;
+}

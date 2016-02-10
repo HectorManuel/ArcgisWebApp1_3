@@ -1,36 +1,46 @@
 .Title{
 	font-family:"Arial Black";
 	font-size: 2em;	
-}
-.heading2{
-	font-family:"Arial Black";
-	font-size: 1em;
-}
-
-.MainMenuTiles{
-  display:block;
-  float:left;
-  margin: 5px 5px 5px 5px;
-  height:150px;
-  width:120px;
-  text-align:center;
-  position:relative;
+	width: 220px;
+	display: block;
+	float:left;
 }
 
-.MainMenuTiles img{
-  position: absolute;
-  bottom:0;
-  left: 0;
+.cartBtn{
+	width:55px;
+	height:40px;
+	border:none;
+	display:block;
+	float:left;
+	background-color: transparent;
+	background-position:center bottom;
+	background-image: url("../images/cart.png");
+	background-repeat: no-repeat;
+	text-align:center;
+	color:rgb(220,85,30);
 }
 
-.MainMenuImage{
-  width:90px;
-  height:90px;
-  margin-left:15px;
-  margin-bottom:10px;
+.cartBtn:hover{
+	background-color: rgb(247,194,5);
 }
 
+.cartSpan{
+	position:absolute;
+	display:block;
+	top:0;
+	
+}
 
-.MainMenuTiles:hover{
-  background-color:rgb(247, 194, 5);
+.backBtn{
+	width:48px;
+	height:48px;
+	border:none;
+	display:none;
+	float:left;
+	background-color: transparent;
+	background-position:center center;
+	background-image: url("../images/back.png");
+	background-repeat: no-repeat;
+	text-align:center;
+	color:rgb(220,85,30);
 }

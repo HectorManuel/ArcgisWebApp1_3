@@ -1,0 +1,44 @@
+.subTitleCarto{
+	font-family:"Arial Black";
+	font-size: 1.5em;	
+}
+
+.checkboxLabelCarto {
+	display: block; 
+	width:100%;
+	margin-top:10px;
+	width:150px;
+}
+
+.mainButtonStyleCarto{
+    margin-top: 10px;
+    border: none;
+    background-color: rgb(56,172,94);
+    color: white;
+    height: 2em;
+    width: 120px;
+    margin-bottom:10px;
+}
+
+.Drawbtn{
+	margin-top: 10px;
+	border:none;
+	background-color:transparent;
+	margin:5px 5px 5px 5px;
+	height:32px;
+	width:32px;
+	background-repeat: no-repeat;
+	background-position: center center;
+}
+.PointImg{
+	background-image: url("../../images/DrawImg/DrawPoint.png");	
+}
+.LineImg{
+	background-image: url("../../images/DrawImg/DrawPolyline.png");	
+}
+.SquareImg{
+	background-image: url("../../images/DrawImg/DrawRectangle.png");	
+}
+.RemoveImg{
+	background-image: url("../../images/DrawImg/Drawremove.png");	
+}

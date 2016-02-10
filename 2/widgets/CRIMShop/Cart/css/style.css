@@ -1,0 +1,60 @@
+.shopSub{
+	font-family:"Arial Black";
+	font-size: 1.5em;	
+	display: block;
+	float:left;
+	margin-top:20px;
+	border-top:2px solid #E6E6E6;
+	width:100%;
+}
+
+ul{
+	list-style-type:none;
+	width:100%;
+	padding-left:5px
+}
+
+h3{
+	font: bold 20px/1.5 Arial , Verdana, sans-serif;
+}
+
+li{
+	 border-top: 1px solid #F1F1F1;
+}
+
+li p{
+	padding:10px;
+	overflow:auto;
+    display: block;
+    float: left;
+    clear: left;
+}
+li img{
+    display: block;
+    float: left;
+    margin-top: 10px;
+}
+
+li:hover{
+	background:#eee;
+	cursor:pointer;
+}
+
+.TextBoxDistanceCart{
+	font-size:1em; 
+	display:block;
+	float:left; 
+	width:30px; 
+	height:1.2em;
+	margin-top:10px;
+}
+
+.ComprarBtnStyle{
+    margin-top: 10px;
+    border: none;
+    background-color: rgb(56,172,94);
+    color: white;
+    height: 2em;
+    width: 120px;
+    clear: both;
+}

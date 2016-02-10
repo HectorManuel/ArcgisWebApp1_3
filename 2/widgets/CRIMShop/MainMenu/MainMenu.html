@@ -1,0 +1,37 @@
+<div>
+	<div id="shopTitle" class="shopSub" data-tojo-attach-point="shopTitle">
+		Selección de productos
+	</div>
+	<div id="MainMenu" style="margin-top:20px; margin-left:20px;display:block;float:left" data-dojo-attach-point="MainMenupage">
+		<button id="divFoto" data-dojo-attach-point="divFoto" class="MainMenuButton FotoAereaImage" data-dojo-attach-event="click:FotoAereaClick, onmouseenter:FotoHover,onmouseleave:FotoUnhover">
+			<span class="buttonSpanMainMenu heading2" style="left: 15px !important">  Fotos Aérea</span>
+		</button>
+		<button id="divCarto" data-dojo-attach-point="divCarto" class="MainMenuButton CartoImage" data-dojo-attach-event="click:CartoClick, onmouseenter:CartoHover,onmouseleave:CartoUnhover">
+			<span class="buttonSpanMainMenu heading2">Mapas Cartográficos</span>
+		</button>
+		<div class="positioning" data-dojo-attach-point="SubDivForInterfaceFoto">
+			<div id="Foto" data-dojo-attach-point="Foto"></div>
+		</div>
+		<div class="positioning" data-dojo-attach-point="SubDivForInterfaceCarto">
+			CartoGrafia
+			<div id="Carto" data-dojo-attach-point="carto"></div>
+		</div>	
+	</div>
+	<div style="display:block;float:left; margin-left:20px; margin-top:20px">
+		<button id="divColindante" data-dojo-attach-point="divColindante" class="MainMenuButton FotoAereaImage" data-dojo-attach-event="click:ColindanteClick, onmouseenter:ColindanteHover,onmouseleave:ColindanteUnhover">
+			<span class="buttonSpanMainMenu heading2">Lista de colindantes</span>
+		</button>
+		<button id="divElementos" data-dojo-attach-point="divElementos" class="MainMenuButton CartoImage" data-dojo-attach-event="click:ElementosClick, onmouseenter:ElementosHover,onmouseleave:ElementosUnhover">
+			<span class="buttonSpanMainMenu heading2">Elementos Gráficos</span>
+		</button>
+		<div class="positioning" data-dojo-attach-point="SubDivForInterfaceColi">
+			Lista de Colindante
+			<div id="Colindante" data-dojo-attach-point="Colindante"></div>
+		</div>
+		<div class="positioning" data-dojo-attach-point="SubDivForInterfaceElem">
+			Elementos Graficos
+			<div id="Element" data-dojo-attach-point="Element"></div>
+		</div>
+		
+	</div>
+</div>

@@ -1,0 +1,43 @@
+<div>
+	<div id="shopTitle" class="shopSub" data-tojo-attach-point="shopTitle">
+		<p>Carro de compras</p>
+	</div>
+	<div data-dojo-attach-point="comprarTotalDiv">
+		<button id="comprarBtn" style="display:block; float:left;" data-dojo-atach-point="comprarBtn" class="ComprarBtnStyle" data-dojo-attach-event="click:ComprarCarro">Comprar</button>
+		<div data-dojo-attach-point="totalDiv" style="float:left; display:block;margin-left: 15px;margin-top: 10px;">
+			<p style="font-size:1.5em">Total: $ <label data-dojo-attach-point="totalLabel">100</label></p>
+		</div>
+		
+	</div>
+	<div id="listDivCart" data-dojo-attach-point="listDivCart" style="clear:both;padding-top:5px;">
+		<ul data-dojo-attach-point="cartList">
+			<li>
+				<label data-dojo-attach-point="headerTitle">`test</label>
+				<table>
+					<tr>
+						<td>
+							<img data-dojo-attach-point="itemImage" src="widgets/CRIMShop/images/aerea.PNG" >
+						</td>
+						<td>
+							<table>
+								<tr>
+									<p>cantidad: </p>
+									<input type="text" data-dojo-attach-point="itemQty" class="TextBoxDistanceCart" name="itemQty" />
+								</tr>
+								<tr>
+									<p>precio: </p>
+									<input type="text" data-dojo-attach-point="preciosDetail" class="TextBoxDistanceCart" name="preciosDetail" />
+								</tr>
+							</table>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<button class="ComprarBtnStyle" data-dojo-attach-point="removeItemBtn" data-dojo-attach-event="click:DeleteThisItem">eliminar</button>
+						</td>
+					</tr>
+				</table>
+			</li>
+		</ul>
+	</div>
+</div>
