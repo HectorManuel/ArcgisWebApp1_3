@@ -21,23 +21,25 @@ define(['dojo/_base/declare',
 			itemQty:null,
 			itemPrice:null,
 			templateString:template,
+			
 			construct: function(args, srcRefNode){
 				declare.safeMixin(this, args);
 			},
 			
 			postCreate: function(){
 				this.inherited(arguments);
-				
+				this.headerTitle.innerHTML = this.itemId;
 			},
 			
 			startup: function(){
 				this.inherited(arguments);
-				this.headerTitle.innerHTML = this.itemId;
+				
 			},
 			
 			DeleteThisItem:function(){
 				console.log(itemId);
 			}
+			
 			
 		});
 	});

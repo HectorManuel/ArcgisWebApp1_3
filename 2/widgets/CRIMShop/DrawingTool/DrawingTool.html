@@ -1,0 +1,27 @@
+<div>
+	<div style="margin-top:10px; float:left; width:100%" data-dojo-attach-point="GraphicArea">
+		<p>Metodos de selección:</p>
+		<div data-dojo-attach-point="metodosSeleccion" style="width:100%; height:60px; border:1px solid black; text-align:center">
+			<table style="margin-top:5px; margin-left:15px">
+				<tr>
+					<td style="width:42px;height:42px">
+						<button data-dojo-attach-point="point" id="POINT" class="PointImg Drawbtn" data-dojo-attach-event="click:DrawThis"></button>
+					</td>
+					<td style="width:42px;height:42px">
+						<button data-dojo-attach-point="line" id="LINE" class="LineImg Drawbtn" data-dojo-attach-event="click:DrawThis"></button>
+					</td>
+					<td style="width:42px;height:42px">
+						<button data-dojo-attach-point="square" id="RECTANGLE" class="SquareImg Drawbtn" data-dojo-attach-event="click:DrawThis"></button>
+					</td>
+					<td style="width:42px;height:42px">
+						<button data-dojo-attach-point="Remove" class="RemoveImg Drawbtn" data-dojo-attach-event="click:ClearDrawings"></button>
+					</td>
+				</tr>
+			</table>
+		</div>
+		<div data-dojo-attach-point="descriptions" style="margin-top:5px; width:100%; height:90px; border:1px solid black">
+			
+		</div>
+		
+	</div>
+</div>

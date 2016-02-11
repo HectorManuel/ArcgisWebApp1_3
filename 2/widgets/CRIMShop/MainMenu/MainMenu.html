@@ -10,11 +10,64 @@
 			<span class="buttonSpanMainMenu heading2">Mapas Cartográficos</span>
 		</button>
 		<div class="positioning" data-dojo-attach-point="SubDivForInterfaceFoto">
-			<div id="Foto" data-dojo-attach-point="Foto"></div>
+			<div id="Foto" data-dojo-attach-point="Foto">
+				<div style="height:170px; width:100%;" data-dojo-attach-point="FotoAreaSpace" id="FotoAereaSpace">
+					<div class="subTitle" data-dojo-attach-point="FotoTitle">
+						Foto Aerea
+					</div>
+					<div data-dojo-attach-point="MapSelect" id="MapSelect">
+					</div>
+					<!-- <input id="checkBox" data-dojo-attach-point="checkBox"/><label for="checkBox">Desea seleccionar un radio?</label> -->
+					<label class="checkboxLabel">
+						<input type="checkbox" name="checkBox" data-dojo-attach-point="checkBox" data-dojo-attach-event="click:OnCheckboxClicked">
+							 Desea seleccionar un radio?
+						</input>
+					</label>
+					<label class="checkboxLabel">
+						<input type="checkbox" name="checkBox" data-dojo-attach-point="checkBoxCOlindantes" data-dojo-attach-event="click:GetListaColindante">
+							 Desea Lista de colindante del area?
+						</input>
+					</label>
+					
+					<button id="addFotoToCart" class="mainButtonStyle" data-dojo-attach-event="click:AddToCartClick" data-dojo-attach-point="addFotoToCart">Agregar al carro</button>
+					<button id="previewAerea" class="mainButtonStyle" data-dojo-attach-point="previewAerea">vista Previa</button> 	
+				</div>
+			</div>
 		</div>
 		<div class="positioning" data-dojo-attach-point="SubDivForInterfaceCarto">
-			CartoGrafia
-			<div id="Carto" data-dojo-attach-point="carto"></div>
+			<div id="Carto" data-dojo-attach-point="carto">
+				<div style="height:340px; width:100%" data-dojo-attach-point="CartoOficialesSpace" id="CartoOficialesSpace">
+					<div data-dojo-attach-point="CartoTitle" class="subTitleCarto">
+						Mapas Cartografícos oficiales
+					</div>
+					<table>
+						<tr>
+							<td>
+								<label class="checkboxLabelCarto">
+									<input type="checkbox" name="check1in1000" data-dojo-attach-point="check1in1000" data-dojo-attach-event:"click:Checked1in1000">escala 1:1000</input>
+								</label>
+							</td>
+							<td>
+								<label style="margin-top:10px" data-dojo-attach-point="cantidad1a1000">Cantidad:</label>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<label class="checkboxLabelCarto">
+									<input type="checkbox" name="check1in10000" data-dojo-attach-point="check1in10000" data-dojo-attach-event:"click:Checked1in10000">escala 1:10000</input>
+								</label>
+							</td>
+							<td>
+								<label style="margin-top:10px" data-dojo-attach-point="cantidad1a10000">Cantidad:</label>
+							</td>
+						</tr>
+					</table>
+					<div data-dojo-attach-point="CartoGraphicArea">
+						
+					</div>
+					<button id="addCartoToCart" class="mainButtonStyleCarto" data-dojo-attach-event="click:AddToCartClick" data-dojo-attach-point="addCartoToCart">Agregar al carro</button>
+				</div>
+			</div>
 		</div>	
 	</div>
 	<div style="display:block;float:left; margin-left:20px; margin-top:20px">
@@ -25,8 +78,24 @@
 			<span class="buttonSpanMainMenu heading2">Elementos Gráficos</span>
 		</button>
 		<div class="positioning" data-dojo-attach-point="SubDivForInterfaceColi">
-			Lista de Colindante
-			<div id="Colindante" data-dojo-attach-point="Colindante"></div>
+			<div id="Colindante" data-dojo-attach-point="Colindante">
+				<div style="height:220px; width:100%" data-dojo-attach-point="CartoOficialesSpace" id="CartoOficialesSpace">
+					<div data-dojo-attach-point="ColindanteTitle" class="subTitleCarto">
+						Lista de colindantes
+					</div>
+					<div data-dojo-attach-point="distanceSelecArea">
+						<input type="text" data-dojo-attach-point="inputDistance" class="TextBoxDistance" name="inputDistance" />
+						<div style="margin-left:10px; width: 80px; display:block; float:left">
+							<div data-dojo-attach-point="distanceUnits"></div>
+						</div>
+					</div>
+					<div data-dojo-attach-point="ColDrawingArea"></div>
+					<div style="clear:both">
+						<button id="addListaToCart" class="mainButtonStyleCarto" data-dojo-attach-point="addCartoToCart">Agregar al carro</button>
+					</div>
+					
+				</div>
+			</div>
 		</div>
 		<div class="positioning" data-dojo-attach-point="SubDivForInterfaceElem">
 			Elementos Graficos

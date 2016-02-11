@@ -7,10 +7,23 @@ define(['dojo/_base/declare',
 		'esri/lang',
 		'jimu/utils',
 		'dojo/dom-style',
-		'widgets/CRIMShop/FotoAerea/FotoAerea',
-		'widgets/CRIMShop/CartoOficiales/CartoOficiales',
 		'widgets/CRIMShop/RadioColindante/RadioColindante',
-		'widgets/CRIMShop/InitAllWidgets'],
+		'widgets/CRIMShop/InitAllWidgets',
+		'dojo/store/Memory',
+		'dijit/form/FilteringSelect',
+		'esri/Color',
+		'esri/toolbars/draw',
+		'dojo/on',
+		'esri/symbols/SimpleMarkerSymbol',
+        'esri/symbols/SimpleLineSymbol',
+        'esri/symbols/SimpleFillSymbol',
+        'esri/graphic',
+        'dojo/parser',
+        'widgets/CRIMShop/DrawingTool/DrawingTool',
+        
+        'dojo/domReady!',
+        'dijit/layout/BorderContainer',
+        'dijit/layout/ContentPane'],
 	function(declare,
 		_WidgetBase,
 		_TemplatedMixin,
@@ -20,10 +33,19 @@ define(['dojo/_base/declare',
 		esriLang,
 		utils,
 		DomStyle,
-		FotoAereaInterface,
-		CartoOficiales,
 		RadioColindante,
-		InitWidgets){
+		InitWidgets,
+		Memory,
+		FilteringSelect,
+		Color,
+		Draw,
+		on,
+		SimpleMarker,
+		SimpleLine,
+		SimpleFill,
+		Graphic,
+		parser,
+		DrawingTool){
 			return declare([_WidgetBase, _TemplatedMixin],{
 				
 				idProperty:null,
@@ -31,12 +53,24 @@ define(['dojo/_base/declare',
 				photoInterface: null,
 				cartoInterface:null,
 				listaInterface:null,
+				map:null,
 				
 				//private variables **************************
 				_cartoClick: false,
 				_fotoClick: false,
 				_colindanteClick: false,
 				_elementosClick: false,
+				
+				//*************CARTO VARIABLES****************
+				checkedOne: null,
+				checkedTen: null,
+				drawingToolbar:null,
+				//********************************************
+				
+				//************COlindantes*********************
+				ColToolbar:null,
+				Units:null,
+				dropDownCol:null,
 				
 				//********************************************
 				
@@ -51,15 +85,12 @@ define(['dojo/_base/declare',
 				
 				postCreate:function(){
 					this.inherited(arguments);
-					//this.photoInterface = InitWidgets.InitFotoAerea();
-					this.photoInterface = new FotoAereaInterface({propertId:"FotoAereaInterface"});
-					this.photoInterface.placeAt(this.Foto)
-					//this.cartoInterface = InitWidgets.InitCarto();
-					this.cartoInterface = new CartoOficiales({porpertyId:"CartoInterface"});
-					this.cartoInterface.placeAt(this.carto);
-					//this.listaInterface = InitWidgets.InitColindantes("Lista De Colindantes");
-					this.listaInterface = new RadioColindante({propertyId:"RadiousInterface", widgetTitle:"Lista Colindante"});
-					this.listaInterface.placeAt(this.Colindante);
+					parser.parse();
+					//this.photoInterface = new DrawingTool({map: this.map}, this.CartoGraphicArea);
+					this.cartoInterface = new DrawingTool({map: this.map}, this.CartoGraphicArea);
+					this.listaInterface = new DrawingTool({map: this.map}, this.ColDrawingArea);
+					this.ComboBoxInit();
+					this.ComboBoxInitMedidas();
 					
 				},
 				
@@ -179,6 +210,80 @@ define(['dojo/_base/declare',
 			    		DomStyle.set(this.divElementos, {backgroundColor:"transparent"});
 			    	}
 			    	
-			    }
+			    },
+			    
+			    AddToCartClick: function(){
+			    	
+			    },
+			    
+			    //Area de fotos aereas*****************************
+			    //*************************************************
+    			OnCheckboxClicked: function(x){
+					this.checkbox = this.checkBox.checked;
+				},
+				GetListaColindante: function(){
+					
+				},
+
+				ComboBoxInit: function(){
+					this.ComboBoxDataStore();
+					this.comboBox = new FilteringSelect({
+						id:"MapSelect",
+						name:"FotoAreaMapSelect",
+						value: "seleccione un plano",
+						autoComplete:true,
+						store:this.MapNames,
+						searchAttr:"label"
+					},this.MapSelect);
+					this.comboBox.startup();
+				},
+				
+				ComboBoxDataStore: function(){
+					var data = [{id:"test1", name:"Aerea1998", label:"Foto Aerea 1998"},
+					{id:"test2", name:"Aerea2010", label:"Foto Aerea 2010"},
+					{id:"test3", name:"Aerea2015", label:"Foto Aerea 2015"}];
+					this.MapNames = new Memory({data:data});
+					console.log(data);
+				},
+				
+				//********************Carto oficiales*************
+				//************************************************
+		
+				
+				DeselectClick: function(){
+					console.log("deselecting");
+				},
+				
+				Check1in1000: function(){
+					this.checkedOne= this.check1in1000.checked;
+				},
+				
+				Check1in10000: function(){
+					this.checkedTen= this.check1in10000.checked;
+				},
+				
+				//*********************************************
+				//*************COLINDANTES*********************
+				
+				ComboBoxInitMedidas: function(){
+					this.ComboBoxDataStoreMedidas();
+					this.dropDownCol = new FilteringSelect({
+						id:"distanceUnits",
+						name:"Units",
+						value: "Select Unit",
+						autoComplete:true,
+						store:this.Units,
+						searchAttr:"name"
+					},this.distanceUnits);
+					this.dropDownCol.startup();
+				},
+			    
+    			ComboBoxDataStoreMedidas: function(){
+					var data = [{id:"test1", name:"metros", label:"Metros"},
+					{id:"test2", name:"millas", label:"Millas"},
+					{id:"test3", name:"pies", label:"Pies"}];
+					this.Units = new Memory({data:data});
+					console.log(data);
+				},
 			});
 		});

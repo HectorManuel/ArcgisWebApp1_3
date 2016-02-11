@@ -32,20 +32,21 @@ function(declare,
     postCreate: function() {
       this.inherited(arguments);
       console.log('postCreate');
-      utils.loadStyleLink("FotoAereaStyle", "./widgets/CRIMShop/FotoAerea/css/style.css");
+      //utils.loadStyleLink("FotoAereaStyle", "./widgets/CRIMShop/FotoAerea/css/style.css");
       utils.loadStyleLink("MainMenuStyles", "./widgets/CRIMShop/MainMenu/css/style.css");
-      utils.loadStyleLink("CartpStyle", "./widgets/CRIMShop/CartoOficiales/css/style.css");
-      utils.loadStyleLink("CartpStyle", "./widgets/CRIMShop/RadioColindante/css/style.css");
+      //utils.loadStyleLink("CartoStyle", "./widgets/CRIMShop/CartoOficiales/css/style.css");
+      utils.loadStyleLink("RadioStyle", "./widgets/CRIMShop/RadioColindante/css/style.css");
       utils.loadStyleLink("CartStyle", "./widgets/CRIMShop/Cart/css/style.css"); 
-
+      
+      DomStyle.set(this.shoopingCart,{display:"none"});
+      this.mainMenu = new MainMenu({idProperty:"Main", map:this.map});
+      this.mainMenu.placeAt(this.mainMenuDiv);
     },
 
     startup: function() {
       this.inherited(arguments);
-      DomStyle.set(this.shoopingCart,{display:"none"});
       //this.mainMenu = InitWidget.InitMainMenu();
-      this.mainMenu = new MainMenu({idProperty:"Main"});
-      this.mainMenu.placeAt(this.mainMenuDiv);
+
       //create the cart ready for data
       //this.cart = InitWidget.InitCart();
       this.cart = new Cart({idProperty:"ShoppingCart"});
